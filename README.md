@@ -1,6 +1,6 @@
 This is a simple jmh benchmark comparing creating `java.util.UUID` values using either derived or random data.
 
-The TL;DR is, using only JDK library primitives, if you create a new `MessageDigest` each time you need to create a `UUID` value then using MD5 hashing is faster than `UUID.randomUUID`, but random is faster than SHA-1 and SHA-256 generation.
+The TL;DR is, using only JDK library primitives, if you create a new `MessageDigest` each time you need to create a `UUID` value then using MD5 or SHA-1 hashing is faster than `UUID.randomUUID`, but random is faster than SHA-256 generation.
 
 If you share the instance of `MessageDigest`, rather than re-create it, all deterministic methods are faster than random generation.
 
